@@ -13,6 +13,7 @@ function createAndWriteOutput(operator, resultBeforeCalc, calcNumber){
     outputResult(currentResult, calcDescription); //from vendor file
 }
 
+//Function to save log
 function writeToLog(
     operationIdentifier, 
     prevResult,
@@ -28,7 +29,8 @@ function writeToLog(
     logEntries.push(logEntry.operation);
     console.log(logEntries);  
 }
-  
+
+//Add the numbers
 function add(){ 
     const enteredNumber = getUserNumberInput();
     const initialResult = currentResult;
@@ -37,6 +39,7 @@ function add(){
     writeToLog('ADD', initialResult, enteredNumber, currentResult);
 }
 
+//Sub the numbers
 function subtract(){
     const enteredNumber = getUserNumberInput();
     const initialResult = currentResult;
@@ -67,4 +70,3 @@ subtractBtn.addEventListener('click', subtract);
 multiplyBtn.addEventListener('click', multiply);
 divideBtn.addEventListener('click', divide) ;
 
-//VSCODE GIT
