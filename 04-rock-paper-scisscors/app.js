@@ -19,11 +19,11 @@ const getPlayerChoice = () => {
 
 	if (selection === null || selection === "") {
 		alert(`無効な値です！　代わりに${DEFAULT_USER_CHOICE}を選択しました。`);
-		return;
+		return DEFAULT_USER_CHOICE;
 	}
 
 	if (selection !== ROCK && selection !== PAPER && selection !== SCISSORS) {
-		alert("無効な値です！　代わりに${Rock}を選択しました。");
+		alert(`無効な値です！　代わりに${Rock}を選択しました。`);
 		return;
 	}
 	return selection;
@@ -65,15 +65,15 @@ startGameBtn.addEventListener("click", () => {
 	if (gameIsRunning) {
 		return;
 	}
-	gameIsRunning = "true";
+	gameIsRunning = true;
 	console.log("Game is starting...");
 	const playerChoice = getPlayerChoice();
 	const computerChoice = getComputerChoice();
 	let winner;
 	if (playerChoice) {
-		const winner = getWinner(ComputerChoice, playerChoice);
+		winner = getWinner(computerChoice, playerChoice);
 	} else {
-		winner = getWinner(ComputerChoice);
+		winner = getWinner(computerChoice);
 	}
 	let message = `You picked ${playerChoice || DEFAULT_USER_CHOICE}, computer picked ${computerChoice}, therefore you `;
 	if (winner === RESULT_DRAW) {
@@ -86,3 +86,30 @@ startGameBtn.addEventListener("click", () => {
 	alert(message);
 	gameIsRunning = false;
 });
+
+//not related to the game
+
+const sumUp = (...numbers) => {
+	const validateNumber = (number) => {
+		return isNaN(number) ? 0 : number;
+	};
+
+	let sum = 0;
+	for (const num of numbers) {
+		sum += validateNumber(num);
+	}
+	return sum;
+};
+
+const subtractUp = function () {
+	let sum = 0;
+	for (const num of arguments) {
+		//don't use ts
+		sum -= num;
+	}
+	return sum;
+};
+
+console.log(sumUp(1, 5, 10, -3, 6, 10));
+console.log(sumUp(1, 5, 10, -3, 6, 10, 25, 88));
+console.log(subtractUp(1, 10, 67, 69, 41));
