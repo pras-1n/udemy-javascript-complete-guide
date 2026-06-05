@@ -56,4 +56,4 @@ console.log(storedResult, testResults);
 console.log(testResults.indexOf(1.5));
 
 const personData = [{name:'Max'}, {name: 'Mikkel'}];
-console.log(personData.indexOf({name:'Manuel'}));
+console.log(personData.indexOf({name:'Mikkel'}));
