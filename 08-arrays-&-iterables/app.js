@@ -47,7 +47,7 @@
 // console.log(hobbies);
 
 const testResults = [1, 5.3, 1.5, 10.99, -5, 10];
-// const storedResult = testResults.slice(2);  
+// const storedResult = testResults.slice(2);
 const storedResult = testResults.concat([3.99, 21]);
 
 testResults.push(5.91);
@@ -55,5 +55,17 @@ testResults.push(5.91);
 console.log(storedResult, testResults);
 console.log(testResults.indexOf(1.5));
 
-const personData = [{name:'Max'}, {name: 'Mikkel'}];
-console.log(personData.indexOf({name:'Mikkel'}));
+const personData = [{ name: "Max" }, { name: "Mikkel" }];
+console.log(personData.indexOf({ name: "Mikkel" }));
+
+const mikkel = personData.find((person, idx, persons) => {
+  return person.name === "Mikkel";
+});
+
+mikkel.name = "Franziska";
+
+console.log(mikkel, personData);
+
+const maxIndex = personData.findIndex((person, idx, persons) => {
+  return person.name === "Max";
+});
