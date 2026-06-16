@@ -159,3 +159,4 @@ const nameData = ["Iggy", "Pop", "San", 18];
 
 const [firstName, lastName, ...otherInfo] = nameData;
 console.log(firstName, lastName, otherInfo);
+ 
