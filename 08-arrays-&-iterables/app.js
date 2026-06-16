@@ -110,7 +110,7 @@ const sortedPrices = prices.sort((a, b) => {
 
 console.log(sortedPrices);
 
-const filteredArray = prices.filter(p => p > 6);
+const filteredArray = prices.filter((p) => p > 6);
 
 console.log(filteredArray);
 
@@ -125,3 +125,13 @@ console.log(filteredArray);
 const sum = prices.reduce((prevValue, curValue) => prevValue + curValue, 0);
 
 console.log(sum);
+
+const data = "new york;10.99;200";
+
+const transformedData = data.split(";");
+transformedData[1] = +transformedData[1];
+console.log(transformedData);
+
+const nameFragments = ["Jax", "Cock"];
+const name = nameFragments.join(" ");
+console.log(name);
