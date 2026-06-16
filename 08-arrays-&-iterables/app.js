@@ -122,4 +122,6 @@ console.log(filteredArray);
 
 // console.log(sum);
 
-const sum = prices.reduce();
+const sum = prices.reduce((prevValue, curValue) => prevValue + curValue, 0);
+
+console.log(sum);
